@@ -232,6 +232,12 @@ window.app = {
         }
     },
 
+    triggerGoToDownload() {
+        if(state.currentWallpaper) {
+            this.showDownload(state.currentWallpaper.id);
+        }
+    },
+
     showDownload(wallpaperId, push = true) {
         if (!state.currentGame) return this.showHome(push);
 
@@ -308,7 +314,7 @@ window.app = {
     resetDownloadUI() {
         dom.countdownContainer.classList.remove('hidden');
         dom.downloadReadyContainer.classList.add('hidden');
-        dom.countdownTimer.textContent = '5';
+        dom.timerDisplay.textContent = '5';
     },
 
     clearDownloadState() {
@@ -325,7 +331,7 @@ window.app = {
         
         state.downloadTimer = setInterval(() => {
             secondsLeft--;
-            dom.countdownTimer.textContent = secondsLeft;
+            dom.timerDisplay.textContent = secondsLeft;
             
             if (secondsLeft <= 0) {
                 clearInterval(state.downloadTimer);
