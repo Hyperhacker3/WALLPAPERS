@@ -370,10 +370,33 @@ body.theme-nfs .primary-btn, body.theme-elden-ring .primary-btn {
     min-height: 500px;
 }
 
+.left-ad {
+    grid-column: 1;
+}
+
+.right-ad {
+    grid-column: 3;
+}
+
 @media (max-width: 1024px) {
     .download-layout {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
+    }
+    
+    .left-ad {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .download-content {
+        grid-column: 1 !important;
+        grid-row: 2;
+    }
+    
+    .right-ad {
+        grid-column: 1;
+        grid-row: 3;
     }
 }
 
@@ -390,6 +413,7 @@ body.theme-nfs .primary-btn, body.theme-elden-ring .primary-btn {
 }
 
 .download-content {
+    grid-column: 2;
     display: flex;
     flex-direction: column;
     gap: 2rem;
